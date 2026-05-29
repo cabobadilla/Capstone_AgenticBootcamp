@@ -1,0 +1,57 @@
+# CCA-F corpus URLs — organized by domain and trust tier.
+# Tier 1 = authoritative (Anthropic first-party docs) — citations may reference these.
+# Tier 2 = supplementary (official cookbook/examples) — for context only.
+#
+# MVP scope: D1 only. Add D2-D5 during Week 2 V1 build.
+
+domains:
+  D1:
+    name: "Agentic Architecture & Orchestration"
+    weight: 0.27
+    tier1:
+      - url: https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview
+        title: "Tool Use Overview"
+      - url: https://docs.anthropic.com/en/docs/about-claude/models/overview
+        title: "Claude Models Overview"
+      - url: https://docs.anthropic.com/en/docs/agents-and-tools/computer-use
+        title: "Computer Use (Agentic)"
+      # GitHub-raw equivalents for pages that are JS-rendered on docs.anthropic.com
+      # The Anthropic cookbook has the canonical "Building Effective Agents" content
+      - url: https://github.com/anthropics/anthropic-cookbook/blob/main/patterns/agents/building_effective_agents.ipynb
+        title: "Building Effective Agents (Notebook)"
+      - url: https://github.com/anthropics/anthropic-cookbook/blob/main/multimodal/best_practices_for_vision.ipynb
+        title: "Multimodal / Vision Best Practices"
+    tier2:
+      - url: https://github.com/anthropics/anthropic-cookbook/blob/main/patterns/agents/README.md
+        title: "Anthropic Cookbook — Agent Patterns"
+      - url: https://github.com/anthropics/anthropic-cookbook/blob/main/patterns/agents/prompts/research_lead_agent.md
+        title: "Anthropic Cookbook — Research Lead Agent Prompt"
+      - url: https://github.com/anthropics/anthropic-cookbook/blob/main/patterns/agents/prompts/research_subagent.md
+        title: "Anthropic Cookbook — Research Subagent Prompt"
+      - url: https://github.com/anthropics/anthropic-cookbook/blob/main/tool_evaluation/tool_evaluation.ipynb
+        title: "Anthropic Cookbook — Tool Evaluation"
+
+  # ── V1 domains (added Week 2) ─────────────────────────────────────────────
+  D2:
+    name: "Tool Design & MCP Integration"
+    weight: 0.18
+    tier1: []  # populated in V1
+    tier2: []
+
+  D3:
+    name: "Claude Code Configuration & Workflows"
+    weight: 0.20
+    tier1: []
+    tier2: []
+
+  D4:
+    name: "Prompt Engineering & Structured Output"
+    weight: 0.20
+    tier1: []
+    tier2: []
+
+  D5:
+    name: "Context Management & Reliability"
+    weight: 0.15
+    tier1: []
+    tier2: []

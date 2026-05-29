@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Env / secrets
+.env
+.env.local
+*.secret
+
+# Data / runtime artifacts
+data/chroma/*
+!data/chroma/.gitkeep
+data/students/*
+!data/students/.gitkeep
+data/raw/*
+!data/raw/.gitkeep
+data/manifests/*
+!data/manifests/.gitkeep
+logs/*
+!logs/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# pytest / ruff
+.pytest_cache/
+.ruff_cache/

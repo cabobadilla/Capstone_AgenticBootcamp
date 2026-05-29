@@ -1,0 +1,52 @@
+# CCA-F Curriculum — concept list per domain.
+# prerequisites / leads_to model the dependency graph (used by V2 curriculum graph;
+# ignored in MVP/V1 but present so V2 is additive with no schema change).
+
+concepts:
+  # ── Domain D1: Agentic Architecture & Orchestration ────────────────────────
+  - id: agentic_loop_basics
+    name: "Agentic loop and stop_reason semantics"
+    domain: D1
+    prerequisites: []
+    leads_to: [tool_use_execution_loop, orchestrator_subagent_pattern]
+
+  - id: tool_use_execution_loop
+    name: "Tool use execution loop (tool_use / tool_result round-trip)"
+    domain: D1
+    prerequisites: [agentic_loop_basics]
+    leads_to: [orchestrator_subagent_pattern]
+
+  - id: orchestrator_subagent_pattern
+    name: "Orchestrator-subagent architecture pattern"
+    domain: D1
+    prerequisites: [agentic_loop_basics]
+    leads_to: [hub_and_spoke_orchestration, subagent_context_isolation]
+
+  - id: hub_and_spoke_orchestration
+    name: "Hub-and-spoke multi-agent orchestration"
+    domain: D1
+    prerequisites: [orchestrator_subagent_pattern]
+    leads_to: [subagent_context_isolation, multi_agent_trust_boundaries]
+
+  - id: subagent_context_isolation
+    name: "Subagent context isolation and communication patterns"
+    domain: D1
+    prerequisites: [orchestrator_subagent_pattern]
+    leads_to: [multi_agent_trust_boundaries]
+
+  - id: multi_agent_trust_boundaries
+    name: "Trust and security boundaries in multi-agent systems"
+    domain: D1
+    prerequisites: [hub_and_spoke_orchestration, subagent_context_isolation]
+    leads_to: []
+
+  - id: agent_error_handling
+    name: "Error handling and retry strategies in agentic loops"
+    domain: D1
+    prerequisites: [tool_use_execution_loop]
+    leads_to: [multi_agent_trust_boundaries]
+
+  # ── Domain D2: Tool Design & MCP Integration (V1 — populated Week 2) ───────
+  # ── Domain D3: Claude Code Config & Workflows (V1 — populated Week 2) ──────
+  # ── Domain D4: Prompt Engineering & Structured Output (V1 — Week 2) ─────────
+  # ── Domain D5: Context Management & Reliability (V1 — Week 2) ────────────

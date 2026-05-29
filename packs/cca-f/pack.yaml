@@ -1,0 +1,31 @@
+id: cca-f
+name: CCA-F
+full_name: "Claude Certified Architect — Foundations"
+authority: Anthropic
+exam_format: multiple_choice
+question_count: 60
+duration_minutes: 120
+passing_score: 720
+scoring_scale: [100, 1000]
+
+# scenario-based = questions describe real production situations; wrong answers represent anti-patterns
+style: scenario-based
+language: en
+corpus_version: v1
+
+domains:
+  - id: D1
+    name: "Agentic Architecture & Orchestration"
+    weight: 0.27
+  - id: D2
+    name: "Tool Design & MCP Integration"
+    weight: 0.18
+  - id: D3
+    name: "Claude Code Configuration & Workflows"
+    weight: 0.20
+  - id: D4
+    name: "Prompt Engineering & Structured Output"
+    weight: 0.20
+  - id: D5
+    name: "Context Management & Reliability"
+    weight: 0.15
