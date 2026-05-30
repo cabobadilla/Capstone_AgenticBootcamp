@@ -1,0 +1,112 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]: EXAMFORGE_AI
+    - generic [ref=e5]: "session_id: a7f3-exam-2026 | model: gpt-4o | user: dev_student"
+  - generic [ref=e6]:
+    - button "Overview" [ref=e7] [cursor=pointer]
+    - button "Practice" [ref=e8] [cursor=pointer]
+    - button "Flashcards" [ref=e9] [cursor=pointer]
+    - button "Review" [ref=e10] [cursor=pointer]
+    - button "Analytics" [ref=e11] [cursor=pointer]
+    - generic [ref=e12]:
+      - generic [ref=e13]: Q 12 / 30
+      - generic [ref=e16]: 40%
+  - generic [ref=e17]:
+    - generic [ref=e18]:
+      - generic [ref=e20]: // question_12
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - generic [ref=e23]: Q-0012 · Data Structures
+          - generic [ref=e24]:
+            - generic [ref=e25]: Medium
+            - generic [ref=e26]: Trees
+        - generic [ref=e27]:
+          - text: In a
+          - strong [ref=e28]: binary search tree (BST)
+          - text: ", what is the average-case time complexity for a"
+          - strong [ref=e29]: search
+          - text: operation, assuming the tree is reasonably balanced with
+          - emphasis [ref=e30]: "n"
+          - text: nodes?
+          - text: Consider the structural properties of a BST where each node's left subtree contains only nodes with keys
+          - strong [ref=e31]: less than
+          - text: the node's key, and the right subtree contains only nodes with keys
+          - strong [ref=e32]: greater than
+          - text: the node's key.
+      - generic [ref=e33]:
+        - generic [ref=e34]: // select_answer
+        - generic [ref=e36]:
+          - generic [ref=e37] [cursor=pointer]:
+            - generic [ref=e38]: A.
+            - generic [ref=e39]: O(1) — constant time; BST uses a hash-based lookup internally to achieve direct access to any node.
+          - generic [ref=e40] [cursor=pointer]:
+            - generic [ref=e41]: B.
+            - generic [ref=e42]: O(n) — linear time; the algorithm must visit every node in the worst-case scenario for any balanced tree.
+          - generic [ref=e43] [cursor=pointer]:
+            - generic [ref=e44]: C.
+            - generic [ref=e45]: O(log n) — logarithmic time; each comparison halves the remaining search space as we traverse down the height of the tree.
+          - generic [ref=e46] [cursor=pointer]:
+            - generic [ref=e47]: D.
+            - generic [ref=e48]: O(n log n) — linearithmic time; the BST must re-sort nodes during traversal to maintain its structural invariant.
+      - generic [ref=e49]:
+        - button "[ hint ]" [ref=e50] [cursor=pointer]
+        - generic [ref=e51]:
+          - generic [ref=e52]: "answer selected: C"
+          - button "Submit →" [ref=e53] [cursor=pointer]
+      - generic [ref=e54]:
+        - generic [ref=e55]: // context_note
+        - generic [ref=e58]:
+          - text: "Recall: A perfectly balanced BST of height h has at most 2^(h+1) − 1 nodes."
+          - text: This means height h ≈ log₂(n), bounding the number of comparisons needed
+          - text: per search operation. Worst case (degenerate/skewed tree) degrades to O(n).
+    - generic [ref=e59]:
+      - generic [ref=e60]:
+        - generic [ref=e61]: Agent Trace
+        - generic [ref=e62]: ACTIVE
+      - generic [ref=e64]:
+        - generic [ref=e65]: ── session init ──────────────────
+        - generic [ref=e66]: "[AGENT]"
+        - generic [ref=e67]: Loading question bank...
+        - generic [ref=e68]: topic_filter = "Data Structures"
+        - generic [ref=e69]: difficulty = "Medium"
+        - generic [ref=e70]: user_mastery = 0.61
+        - generic [ref=e71]: ──────────────────────────────────
+        - generic [ref=e72]: "[RETRIEVAL]"
+        - generic [ref=e73]: Embedding query → vector store
+        - generic [ref=e74]: k_nearest = 5
+        - generic [ref=e75]: cosine_sim = 0.912
+        - generic [ref=e76]: q_id = "Q-0012"
+        - generic [ref=e77]: ──────────────────────────────────
+        - generic [ref=e78]: "[DISTRACTOR_GEN]"
+        - generic [ref=e79]: Generating plausible distractors
+        - generic [ref=e80]: strategy = "misconception"
+        - generic [ref=e81]: distractors = [A, B, D]
+        - generic [ref=e82]: correct_ans = C
+        - generic [ref=e83]: ──────────────────────────────────
+        - generic [ref=e84]: "[USER_ACTION]"
+        - generic [ref=e85]: "Selected: option_C"
+        - generic [ref=e86]: confidence = awaiting_submit
+        - generic [ref=e87]: time_on_q = 00:01:42
+        - generic [ref=e88]: ──────────────────────────────────
+        - generic [ref=e89]: "[EVAL_AGENT]"
+        - generic [ref=e90]: Awaiting submission...
+        - generic [ref=e91]: next_step = evaluate_response
+        - generic [ref=e92]: feedback_mode = "socratic"
+        - generic [ref=e93]: ">"
+      - generic [ref=e95]:
+        - generic [ref=e96]:
+          - generic [ref=e97]: Accuracy
+          - generic [ref=e98]: 73%
+          - generic [ref=e99]: last 20 questions
+        - generic [ref=e100]:
+          - generic [ref=e101]: Streak
+          - generic [ref=e102]: "4"
+          - generic [ref=e103]: correct in a row
+        - generic [ref=e104]:
+          - generic [ref=e105]: Time / Q
+          - generic [ref=e106]: 1m42s
+          - generic [ref=e107]: avg this session
+        - generic [ref=e108]:
+          - generic [ref=e109]: Mastery
+          - generic [ref=e110]: 61%
+          - generic [ref=e111]: Trees topic

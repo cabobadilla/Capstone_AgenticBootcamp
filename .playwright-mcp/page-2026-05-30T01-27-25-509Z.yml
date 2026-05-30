@@ -1,0 +1,103 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]: ExamAI
+    - generic [ref=e4] [cursor=pointer]: Dashboard
+    - generic [ref=e5] [cursor=pointer]: Practice
+    - generic [ref=e6] [cursor=pointer]: Flashcards
+    - generic [ref=e7] [cursor=pointer]: Mock Exams
+    - generic [ref=e8] [cursor=pointer]: Analytics
+    - generic [ref=e9] [cursor=pointer]: Review Errors
+  - generic [ref=e10]:
+    - generic [ref=e11]:
+      - text: Series 65 ›
+      - strong [ref=e12]: Regulations & Ethics
+      - text: › Fiduciary Duty
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - generic [ref=e15]: Q 7 / 20
+        - generic [ref=e18]: 35%
+      - generic [ref=e19]: ⌛ 14:22 left
+  - generic [ref=e20]:
+    - generic [ref=e21]:
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - generic [ref=e24]: Fiduciary Duty
+          - generic [ref=e25]: Question 7
+          - generic [ref=e26]: Medium
+        - paragraph [ref=e27]:
+          - text: An investment adviser representative (IAR) manages a discretionary account for a retired client who has stated a primary goal of capital preservation. Without consulting the client, the IAR shifts 40% of the portfolio into speculative micro-cap equities following a tip from a colleague.
+          - text: Under the Uniform Securities Act, which of the following BEST describes the IAR's primary obligation that has been violated?
+      - generic [ref=e28]: Select one answer
+      - generic [ref=e29]:
+        - generic [ref=e30] [cursor=pointer]:
+          - generic [ref=e31]: A
+          - generic [ref=e32]: The duty of loyalty, because the IAR prioritized personal gain from the tip over the client's stated interests.
+        - generic [ref=e33] [cursor=pointer]:
+          - generic [ref=e34]: B
+          - generic [ref=e35]: The duty of care, because the IAR failed to act in a manner consistent with the client's risk tolerance and investment objectives.
+        - generic [ref=e36] [cursor=pointer]:
+          - generic [ref=e37]: C
+          - generic [ref=e38]: The suitability obligation, which requires the IAR to obtain written client consent before any discretionary reallocation exceeding 10%.
+        - generic [ref=e39] [cursor=pointer]:
+          - generic [ref=e40]: D
+          - generic [ref=e41]: The best execution requirement, as the IAR was obligated to seek the most favorable terms for all trades executed in a discretionary account.
+      - generic [ref=e42]:
+        - button "Submit Answer" [ref=e43] [cursor=pointer]
+        - button "Skip" [ref=e44] [cursor=pointer]
+        - button "✱ Request Hint" [ref=e45] [cursor=pointer]
+      - generic [ref=e46]:
+        - generic [ref=e47]:
+          - generic [ref=e48]: Session Accuracy
+          - generic [ref=e49]: 71%
+          - generic [ref=e50]: 5 of 7 correct
+        - generic [ref=e51]:
+          - generic [ref=e52]: Avg. Time / Q
+          - generic [ref=e53]: 1:48
+          - generic [ref=e54]: Target < 2:00
+        - generic [ref=e55]:
+          - generic [ref=e56]: Topic Mastery
+          - generic [ref=e57]: 62%
+          - generic [ref=e58]: Regulations & Ethics
+        - generic [ref=e59]:
+          - generic [ref=e60]: Streak
+          - generic [ref=e61]: "3"
+          - generic [ref=e62]: consecutive correct
+    - generic [ref=e63]:
+      - generic [ref=e64]:
+        - generic [ref=e65]: Agent Trace
+        - generic [ref=e66]: LIVE
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - generic [ref=e70]: 09:14:02.110
+          - text: INIT — Question context loaded
+        - separator [ref=e71]
+        - generic [ref=e72]:
+          - generic [ref=e73]: 09:14:02.340
+          - text: CLASSIFY — Topic tagged
+          - text: "\"Fiduciary Duty / Duty of Care\""
+        - separator [ref=e74]
+        - generic [ref=e75]:
+          - generic [ref=e76]: 09:14:02.581
+          - text: RETRIEVE — Knowledge retrieval
+          - text: USA §102 — Fiduciary Standard
+          - text: NASAA Model Rule 203(a)-2
+        - separator [ref=e77]
+        - generic [ref=e78]:
+          - generic [ref=e79]: 09:14:03.012
+          - text: "DISTRACTOR — Analyzing wrong answer traps:"
+          - text: A → loyalty (≠ primary violation)
+          - text: C → suitability rule misapplied
+          - text: D → best execution off-topic
+        - separator [ref=e80]
+        - generic [ref=e81]:
+          - generic [ref=e82]: 09:14:03.420
+          - text: HINT — Hint queued (not shown)
+          - text: "Focus: capital preservation = low risk mandate"
+        - separator [ref=e83]
+        - generic [ref=e84]:
+          - generic [ref=e85]: 09:14:04.088
+          - text: SELECTION — User selected
+          - text: Answer B detected
+        - separator [ref=e86]
+        - generic [ref=e87]: EVALUATING RESPONSE...
+      - generic [ref=e89]: "Model: claude-sonnet-4-6 | Latency: 312ms"

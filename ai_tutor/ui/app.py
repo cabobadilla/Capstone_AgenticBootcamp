@@ -1,8 +1,8 @@
 """
 AI Tutor UI — V1.2 (design overhaul)
 
-Design direction: "Focused Learner" — warm academic SaaS aesthetic.
-Palette: stone/cream base · amber accent · IBM Plex Mono for exam content.
+Design direction: "Chalk & Coral" — editorial high-contrast SaaS aesthetic.
+Palette: crisp white base · coral-orange accent (#ea580c) · jet-black nav · IBM Plex Mono for exam content.
 
 Changes from V1.1:
 - Custom CSS system (typography, colors, cards, pills, sidebar)
@@ -65,7 +65,7 @@ _manifest = _load_manifest()
 _CSS = """
 /* ── Foundation ─────────────────────────────────────────────────────────── */
 .gradio-container {
-  background: #fafaf9 !important;
+  background: #fefffe !important;
   font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
   max-width: 1280px !important;
   margin: 0 auto !important;
@@ -73,19 +73,25 @@ _CSS = """
 
 footer, .built-with, footer.svelte-1ax1toq { display: none !important; }
 
-/* ── Tab Navigation — dark bar with amber active ─────────────────────────── */
-.tab-nav {
-  background: #1c1917 !important;
-  padding: 6px 8px !important;
-  border-radius: 0 !important;
+/* ── Tab Navigation — jet black bar with coral active ────────────────────── */
+/* Gradio 6 uses .tab-container/.tab-wrapper (not .tab-nav) */
+.tab-wrapper {
+  background: #0a0a0a !important;
+  border-bottom: none !important;
+}
+.tab-container {
+  background: #0a0a0a !important;
+  padding: 4px 8px !important;
   border: none !important;
+  border-bottom: none !important;
   gap: 2px !important;
   flex-wrap: wrap !important;
 }
-.tab-nav button {
+.tab-container button {
   background: transparent !important;
-  color: #a8a29e !important;
+  color: #a3a3a3 !important;
   border: none !important;
+  border-bottom: 2px solid transparent !important;
   border-radius: 6px !important;
   font-size: 13px !important;
   font-weight: 500 !important;
@@ -93,25 +99,39 @@ footer, .built-with, footer.svelte-1ax1toq { display: none !important; }
   transition: all 0.15s !important;
   letter-spacing: 0.01em !important;
 }
-.tab-nav button:hover { background: rgba(255,255,255,0.08) !important; color: #e7e5e4 !important; }
-.tab-nav button.selected { background: #f59e0b !important; color: #1c1917 !important; font-weight: 700 !important; }
+.tab-container button:hover {
+  background: rgba(255,255,255,0.09) !important;
+  color: #f5f5f5 !important;
+  border-bottom-color: transparent !important;
+}
+.tab-container button.selected {
+  background: #ea580c !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border: none !important;
+  border-bottom: none !important;
+  border-radius: 6px !important;
+}
+/* Keep legacy .tab-nav as fallback for future Gradio versions */
+.tab-nav { background: #0a0a0a !important; }
+.tab-nav button.selected { background: #ea580c !important; color: #ffffff !important; font-weight: 700 !important; }
 
 /* ── Primary / Secondary buttons ─────────────────────────────────────────── */
-button.primary { background: #1c1917 !important; color: #fafaf9 !important; border: none !important;
+button.primary { background: #0a0a0a !important; color: #ffffff !important; border: none !important;
   border-radius: 8px !important; font-weight: 600 !important; font-size: 14px !important;
   padding: 10px 22px !important; transition: background 0.15s !important; letter-spacing: 0.01em !important; }
-button.primary:hover { background: #292524 !important; }
+button.primary:hover { background: #171717 !important; }
 button.primary:disabled { background: #a8a29e !important; cursor: not-allowed !important; }
 button.secondary { background: #ffffff !important; color: #1c1917 !important;
   border: 1.5px solid #e7e5e4 !important; border-radius: 8px !important; font-weight: 500 !important;
   font-size: 14px !important; padding: 9px 20px !important; transition: all 0.15s !important; }
 button.secondary:hover { border-color: #78716c !important; background: #fafaf9 !important; }
 
-/* ── Question card — left amber border, mono font ────────────────────────── */
+/* ── Question card — left coral border, mono font ────────────────────────── */
 #question-card > .block, #question-card {
   background: #ffffff !important;
-  border: 1px solid #e7e5e4 !important;
-  border-left: 4px solid #f59e0b !important;
+  border: 1px solid #e5e7eb !important;
+  border-left: 4px solid #ea580c !important;
   border-radius: 12px !important;
   padding: 24px 28px !important;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
@@ -145,9 +165,9 @@ button.secondary:hover { border-color: #78716c !important; background: #fafaf9 !
   gap: 12px !important;
   line-height: 1.5 !important;
 }
-#answer-options label:hover { border-color: #f59e0b !important; background: #fffbeb !important; transform: translateY(-1px) !important; box-shadow: 0 3px 8px rgba(245,158,11,0.12) !important; }
-#answer-options label:has(input:checked) { border-color: #f59e0b !important; background: #fef3c7 !important; font-weight: 600 !important; }
-#answer-options input[type="radio"] { accent-color: #f59e0b !important; width: 16px !important; height: 16px !important; flex-shrink: 0 !important; margin-top: 2px !important; }
+#answer-options label:hover { border-color: #ea580c !important; background: #fff7ed !important; transform: translateY(-1px) !important; box-shadow: 0 3px 8px rgba(234,88,12,0.12) !important; }
+#answer-options label:has(input:checked) { border-color: #ea580c !important; background: #fff7ed !important; font-weight: 600 !important; }
+#answer-options input[type="radio"] { accent-color: #ea580c !important; width: 16px !important; height: 16px !important; flex-shrink: 0 !important; margin-top: 2px !important; }
 
 /* ── Feedback panel ──────────────────────────────────────────────────────── */
 #feedback-panel > .block, #feedback-panel {
@@ -161,14 +181,14 @@ button.secondary:hover { border-color: #78716c !important; background: #fafaf9 !
 
 /* ── Sidebar — dark terminal panel ──────────────────────────────────────── */
 #agent-sidebar > .block, #agent-sidebar {
-  background: #1c1917 !important;
+  background: #111111 !important;
   border-radius: 10px !important;
   border: none !important;
   padding: 14px 16px !important;
   min-height: 80px !important;
 }
-#agent-sidebar .prose { color: #a8a29e !important; font-size: 12px !important; font-family: 'IBM Plex Mono','Fira Code',monospace !important; line-height: 1.6 !important; }
-#agent-sidebar .prose strong { color: #f59e0b !important; font-weight: 600 !important; }
+#agent-sidebar .prose { color: #a3a3a3 !important; font-size: 12px !important; font-family: 'IBM Plex Mono','Fira Code',monospace !important; line-height: 1.6 !important; }
+#agent-sidebar .prose strong { color: #ea580c !important; font-weight: 600 !important; }
 #agent-sidebar .prose code { color: #86efac !important; background: transparent !important; padding: 0 !important; font-size: 11px !important; }
 #agent-sidebar .prose li { color: #a8a29e !important; font-size: 11.5px !important; }
 
@@ -184,7 +204,7 @@ button.secondary:hover { border-color: #78716c !important; background: #fafaf9 !
 .prose tr:hover td { background: #fafaf9 !important; }
 .prose code { background: #f5f5f4 !important; padding: 2px 6px !important; border-radius: 4px !important;
   font-family: 'IBM Plex Mono',monospace !important; font-size: 12.5px !important; color: #1c1917 !important; }
-.prose pre { background: #1c1917 !important; color: #e7e5e4 !important; padding: 16px 20px !important;
+.prose pre { background: #111111 !important; color: #e5e7eb !important; padding: 16px 20px !important;
   border-radius: 8px !important; font-size: 12.5px !important; overflow-x: auto !important; line-height: 1.6 !important; }
 .prose pre code { background: transparent !important; color: #e7e5e4 !important; padding: 0 !important; }
 .prose a { color: #2563eb !important; }
@@ -202,14 +222,14 @@ textarea, input[type="text"], input[type="search"] {
   transition: border-color 0.15s, box-shadow 0.15s !important;
 }
 textarea:focus, input[type="text"]:focus {
-  border-color: #f59e0b !important; outline: none !important;
-  box-shadow: 0 0 0 3px rgba(245,158,11,0.15) !important;
+  border-color: #ea580c !important; outline: none !important;
+  box-shadow: 0 0 0 3px rgba(234,88,12,0.15) !important;
 }
 
 /* ── Chatbot ─────────────────────────────────────────────────────────────── */
 .chatbot .message-wrap { padding: 6px 0 !important; }
 .chatbot .message.user { background: #f5f5f4 !important; border-radius: 10px 10px 2px 10px !important; }
-.chatbot .message.bot { background: #fefce8 !important; border: 1px solid #fde68a !important; border-radius: 10px 10px 10px 2px !important; }
+.chatbot .message.bot { background: #fff7ed !important; border: 1px solid #fed7aa !important; border-radius: 10px 10px 10px 2px !important; }
 
 /* ── Blocks — remove noisy default borders ───────────────────────────────── */
 .block { border: none !important; box-shadow: none !important; background: transparent !important; }
@@ -238,12 +258,12 @@ textarea:focus, input[type="text"]:focus {
 }
 
 /* ── Concept list arrows ─────────────────────────────────────────────────── */
-#concept-list .prose li::marker { color: #f59e0b; }
+#concept-list .prose li::marker { color: #ea580c; }
 #concept-list .prose code { font-size: 11.5px !important; }
 
-/* ── Step guide table — step number in amber mono ────────────────────────── */
+/* ── Step guide table — step number in coral mono ────────────────────────── */
 #step-guide .prose td:first-child { font-family: 'IBM Plex Mono',monospace !important;
-  font-weight: 700 !important; color: #d97706 !important; white-space: nowrap !important; }
+  font-weight: 700 !important; color: #c2410c !important; white-space: nowrap !important; }
 
 /* ── Progress mastery bars ───────────────────────────────────────────────── */
 #mastery-panel .prose code { font-size: 10.5px !important; letter-spacing: -0.5px !important; }

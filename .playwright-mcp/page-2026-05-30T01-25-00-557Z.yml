@@ -1,0 +1,89 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]: exam.ai
+    - generic [ref=e4] [cursor=pointer]: Practice
+    - generic [ref=e5] [cursor=pointer]: Review
+    - generic [ref=e6] [cursor=pointer]: Flashcards
+    - generic [ref=e7] [cursor=pointer]: Analytics
+    - generic [ref=e8] [cursor=pointer]: Exams
+    - generic [ref=e9]:
+      - generic [ref=e10]: "Session #42"
+      - generic [ref=e11]: Python · ML Eng
+  - generic [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - generic [ref=e15]: Question 12 of 35
+        - generic [ref=e18]: 12/35
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e21]: Q-012
+          - generic [ref=e22]: Transformers
+          - generic [ref=e23]: Attention
+          - generic [ref=e24]: Medium
+        - generic [ref=e25]: In a standard scaled dot-product attention mechanism, what is the primary purpose of dividing the dot product by √d_k before applying softmax?
+      - generic [ref=e26]:
+        - generic [ref=e27]: Select one answer
+        - generic [ref=e28]:
+          - generic [ref=e29] [cursor=pointer]:
+            - generic [ref=e30]: A
+            - generic [ref=e31]: To normalize the query and key vectors to unit length, ensuring cosine similarity is computed correctly.
+          - generic [ref=e32] [cursor=pointer]:
+            - generic [ref=e33]: B
+            - generic [ref=e34]: To counteract the effect of large dot products that push softmax into regions with very small gradients, stabilizing training.
+          - generic [ref=e35] [cursor=pointer]:
+            - generic [ref=e36]: C
+            - generic [ref=e37]: To scale attention weights so they sum to d_k rather than 1, matching the dimension of the value vectors.
+          - generic [ref=e38] [cursor=pointer]:
+            - generic [ref=e39]: D
+            - generic [ref=e40]: To reduce the computational cost of the matrix multiplication by a factor of √d_k during inference.
+      - generic [ref=e41]:
+        - button "Submit Answer" [ref=e42] [cursor=pointer]
+        - button "Skip" [ref=e43] [cursor=pointer]
+        - generic [ref=e44]: ⌘ + Enter to submit
+    - generic [ref=e45]:
+      - generic [ref=e46]:
+        - generic [ref=e47]:
+          - generic [ref=e48]: Accuracy
+          - generic [ref=e49]: 78%
+          - generic [ref=e50]: +4% vs last session
+        - generic [ref=e51]:
+          - generic [ref=e52]: Streak
+          - generic [ref=e53]: "6"
+          - generic [ref=e54]: "best: 11"
+        - generic [ref=e55]:
+          - generic [ref=e56]: Avg. Time
+          - generic [ref=e57]: 42s
+          - generic [ref=e58]: "target: 60s"
+        - generic [ref=e59]:
+          - generic [ref=e60]: Remaining
+          - generic [ref=e61]: "23"
+          - generic [ref=e62]: ~19 min est.
+      - generic [ref=e63]:
+        - generic [ref=e66]: Agent Trace LIVE
+        - generic [ref=e67]:
+          - generic [ref=e68]: 00:00.1embed question_text → vec[768]
+          - generic [ref=e69]: 00:00.4search knowledge_base k=8
+          - generic [ref=e70]: 00:00.5match attention_scaling score=0.94
+          - generic [ref=e71]: 00:00.6match vanishing_gradient score=0.88
+          - generic [ref=e72]: 00:00.8rank distractors × 3 generated
+          - generic [ref=e73]: 00:01.1tag difficulty → "medium"
+          - generic [ref=e74]: 00:01.2route topic="Transformers/Attn"
+          - generic [ref=e75]: 00:01.4await user_answer
+      - generic [ref=e77]:
+        - generic [ref=e79]: Topic Coverage
+        - generic [ref=e80]:
+          - generic [ref=e81]:
+            - generic [ref=e82]: Transformers
+            - generic [ref=e85]: 82%
+          - generic [ref=e86]:
+            - generic [ref=e87]: Training Loop
+            - generic [ref=e90]: 65%
+          - generic [ref=e91]:
+            - generic [ref=e92]: MLOps
+            - generic [ref=e95]: 48%
+          - generic [ref=e96]:
+            - generic [ref=e97]: Embeddings
+            - generic [ref=e100]: 71%
+          - generic [ref=e101]:
+            - generic [ref=e102]: Fine-tuning
+            - generic [ref=e105]: 30%
