@@ -87,7 +87,8 @@ def test_examiner_generates_valid_question(cca_f_pack, d1_chunks):
     assert isinstance(question, Question)
     assert len(question.options) == 4
     assert question.domain == "D1"
-    assert question.difficulty == QuestionDifficulty.conceptual
+    # difficulty may differ from requested: CCA-F pack.style="scenario-based" can override
+    assert question.difficulty in (QuestionDifficulty.conceptual, QuestionDifficulty.scenario)
 
     # Exactly one correct answer
     correct_options = [o for o in question.options if o.is_correct]

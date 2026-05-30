@@ -1,8 +1,9 @@
 # CCA-F corpus URLs — organized by domain and trust tier.
-# Tier 1 = authoritative (Anthropic first-party docs) — citations may reference these.
-# Tier 2 = supplementary (official cookbook/examples) — for context only.
+# Tier 1 = authoritative (Anthropic/official first-party) — citations reference these.
+# Tier 2 = supplementary (cookbook, examples) — context only.
 #
-# MVP scope: D1 only. Add D2-D5 during Week 2 V1 build.
+# Note: docs.anthropic.com is a React SPA; pages that return <500 chars are replaced
+# with GitHub-raw equivalents containing the same content.
 
 domains:
   D1:
@@ -15,10 +16,6 @@ domains:
         title: "Claude Models Overview"
       - url: https://docs.anthropic.com/en/docs/agents-and-tools/computer-use
         title: "Computer Use (Agentic)"
-      # GitHub-raw equivalents for pages that are JS-rendered on docs.anthropic.com
-      # The Anthropic cookbook has the canonical "Building Effective Agents" content
-      - url: https://github.com/anthropics/anthropic-cookbook/blob/main/patterns/agents/building_effective_agents.ipynb
-        title: "Building Effective Agents (Notebook)"
       - url: https://github.com/anthropics/anthropic-cookbook/blob/main/multimodal/best_practices_for_vision.ipynb
         title: "Multimodal / Vision Best Practices"
     tier2:
@@ -31,27 +28,88 @@ domains:
       - url: https://github.com/anthropics/anthropic-cookbook/blob/main/tool_evaluation/tool_evaluation.ipynb
         title: "Anthropic Cookbook — Tool Evaluation"
 
-  # ── V1 domains (added Week 2) ─────────────────────────────────────────────
   D2:
     name: "Tool Design & MCP Integration"
     weight: 0.18
-    tier1: []  # populated in V1
-    tier2: []
+    tier1:
+      - url: https://docs.anthropic.com/en/docs/agents-and-tools/tool-use/overview
+        title: "Tool Use Overview"
+      - url: https://docs.anthropic.com/en/docs/build-with-claude/tool-use/overview
+        title: "Tool Use — Build with Claude"
+      - url: https://modelcontextprotocol.io/introduction
+        title: "Model Context Protocol — Introduction"
+      - url: https://modelcontextprotocol.io/docs/concepts/architecture
+        title: "MCP Architecture"
+      - url: https://modelcontextprotocol.io/docs/concepts/tools
+        title: "MCP Tools"
+      - url: https://modelcontextprotocol.io/docs/concepts/resources
+        title: "MCP Resources"
+      - url: https://modelcontextprotocol.io/docs/concepts/prompts
+        title: "MCP Prompts"
+    tier2:
+      - url: https://github.com/anthropics/anthropic-cookbook/blob/main/tool_evaluation/tool_evaluation.ipynb
+        title: "Anthropic Cookbook — Tool Evaluation"
+      - url: https://github.com/modelcontextprotocol/python-sdk/blob/main/README.md
+        title: "MCP Python SDK README"
 
   D3:
     name: "Claude Code Configuration & Workflows"
     weight: 0.20
-    tier1: []
-    tier2: []
+    tier1:
+      - url: https://docs.anthropic.com/en/docs/claude-code/overview
+        title: "Claude Code Overview"
+      - url: https://docs.anthropic.com/en/docs/claude-code/settings
+        title: "Claude Code Settings"
+      - url: https://docs.anthropic.com/en/docs/claude-code/memory
+        title: "Claude Code Memory"
+      - url: https://docs.anthropic.com/en/docs/claude-code/hooks
+        title: "Claude Code Hooks"
+      - url: https://docs.anthropic.com/en/docs/claude-code/slash-commands
+        title: "Claude Code Slash Commands"
+      - url: https://docs.anthropic.com/en/docs/claude-code/mcp
+        title: "Claude Code MCP Integration"
+      - url: https://docs.anthropic.com/en/docs/claude-code/ide-integrations
+        title: "Claude Code IDE Integrations"
+    tier2:
+      - url: https://github.com/anthropics/anthropic-cookbook/blob/main/patterns/agents/README.md
+        title: "Anthropic Cookbook — Agent Patterns"
 
   D4:
     name: "Prompt Engineering & Structured Output"
     weight: 0.20
-    tier1: []
-    tier2: []
+    tier1:
+      - url: https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview
+        title: "Prompt Engineering Overview"
+      - url: https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/claude-4-best-practices
+        title: "Claude 4 Prompt Best Practices"
+      - url: https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/chain-of-thought
+        title: "Chain of Thought Prompting"
+      - url: https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/system-prompts
+        title: "System Prompts"
+      - url: https://docs.anthropic.com/en/docs/build-with-claude/structured-outputs
+        title: "Structured Outputs"
+      - url: https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prefill-claudes-response
+        title: "Prefill Claude's Response"
+      - url: https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prompt-templates-and-variables
+        title: "Prompt Templates and Variables"
+    tier2:
+      - url: https://github.com/anthropics/anthropic-cookbook/blob/main/misc/how_to_enable_json_mode.ipynb
+        title: "Anthropic Cookbook — JSON Mode"
 
   D5:
     name: "Context Management & Reliability"
     weight: 0.15
-    tier1: []
-    tier2: []
+    tier1:
+      - url: https://docs.anthropic.com/en/docs/build-with-claude/context-windows
+        title: "Context Windows"
+      - url: https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching
+        title: "Prompt Caching"
+      - url: https://docs.anthropic.com/en/docs/build-with-claude/token-counting
+        title: "Token Counting"
+      - url: https://docs.anthropic.com/en/docs/build-with-claude/batches-api
+        title: "Batches API"
+      - url: https://docs.anthropic.com/en/docs/build-with-claude/extended-thinking
+        title: "Extended Thinking"
+    tier2:
+      - url: https://github.com/anthropics/anthropic-cookbook/blob/main/misc/long_context_window.ipynb
+        title: "Anthropic Cookbook — Long Context Window"

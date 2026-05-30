@@ -1,9 +1,8 @@
-# CCA-F Curriculum — concept list per domain.
-# prerequisites / leads_to model the dependency graph (used by V2 curriculum graph;
-# ignored in MVP/V1 but present so V2 is additive with no schema change).
+# CCA-F Curriculum — all 5 domains.
+# prerequisites / leads_to power V2 curriculum graph (ignored in V1 but schema-compatible).
 
 concepts:
-  # ── Domain D1: Agentic Architecture & Orchestration ────────────────────────
+  # ── D1: Agentic Architecture & Orchestration ──────────────────────────────
   - id: agentic_loop_basics
     name: "Agentic loop and stop_reason semantics"
     domain: D1
@@ -46,7 +45,150 @@ concepts:
     prerequisites: [tool_use_execution_loop]
     leads_to: [multi_agent_trust_boundaries]
 
-  # ── Domain D2: Tool Design & MCP Integration (V1 — populated Week 2) ───────
-  # ── Domain D3: Claude Code Config & Workflows (V1 — populated Week 2) ──────
-  # ── Domain D4: Prompt Engineering & Structured Output (V1 — Week 2) ─────────
-  # ── Domain D5: Context Management & Reliability (V1 — Week 2) ────────────
+  # ── D2: Tool Design & MCP Integration ────────────────────────────────────
+  - id: tool_schema_design
+    name: "Tool schema design and JSON Schema best practices"
+    domain: D2
+    prerequisites: []
+    leads_to: [tool_choice_modes, mcp_architecture]
+
+  - id: tool_choice_modes
+    name: "Tool choice modes: auto, any, tool, none"
+    domain: D2
+    prerequisites: [tool_schema_design]
+    leads_to: [parallel_tool_use]
+
+  - id: parallel_tool_use
+    name: "Parallel tool use and batching strategies"
+    domain: D2
+    prerequisites: [tool_choice_modes]
+    leads_to: []
+
+  - id: mcp_architecture
+    name: "MCP architecture: client, server, host roles"
+    domain: D2
+    prerequisites: []
+    leads_to: [mcp_transport_types, mcp_primitives]
+
+  - id: mcp_transport_types
+    name: "MCP transport types: stdio vs SSE vs HTTP"
+    domain: D2
+    prerequisites: [mcp_architecture]
+    leads_to: []
+
+  - id: mcp_primitives
+    name: "MCP primitives: tools, resources, prompts"
+    domain: D2
+    prerequisites: [mcp_architecture]
+    leads_to: [mcp_tool_security]
+
+  - id: mcp_tool_security
+    name: "MCP tool security and trust boundaries"
+    domain: D2
+    prerequisites: [mcp_primitives]
+    leads_to: []
+
+  # ── D3: Claude Code Configuration & Workflows ────────────────────────────
+  - id: claude_code_memory_types
+    name: "Claude Code memory: CLAUDE.md, user/project/local scopes"
+    domain: D3
+    prerequisites: []
+    leads_to: [claude_code_hooks, claude_code_slash_commands]
+
+  - id: claude_code_hooks
+    name: "Claude Code hooks: PreToolUse, PostToolUse, Notification, Stop"
+    domain: D3
+    prerequisites: [claude_code_memory_types]
+    leads_to: [claude_code_permissions]
+
+  - id: claude_code_slash_commands
+    name: "Claude Code slash commands and custom commands"
+    domain: D3
+    prerequisites: [claude_code_memory_types]
+    leads_to: []
+
+  - id: claude_code_permissions
+    name: "Claude Code permission model and settings.json"
+    domain: D3
+    prerequisites: [claude_code_hooks]
+    leads_to: []
+
+  - id: claude_code_mcp_integration
+    name: "Claude Code MCP server configuration and usage"
+    domain: D3
+    prerequisites: [mcp_architecture]
+    leads_to: []
+
+  - id: claude_code_ide_workflows
+    name: "Claude Code IDE integrations and workflow patterns"
+    domain: D3
+    prerequisites: [claude_code_memory_types]
+    leads_to: []
+
+  # ── D4: Prompt Engineering & Structured Output ───────────────────────────
+  - id: system_prompt_design
+    name: "System prompt design: role, context, instructions, format"
+    domain: D4
+    prerequisites: []
+    leads_to: [chain_of_thought, structured_output_techniques]
+
+  - id: chain_of_thought
+    name: "Chain-of-thought and extended thinking prompting"
+    domain: D4
+    prerequisites: [system_prompt_design]
+    leads_to: []
+
+  - id: structured_output_techniques
+    name: "Structured output: tool use vs JSON mode vs prefill"
+    domain: D4
+    prerequisites: [system_prompt_design]
+    leads_to: [prompt_caching_design]
+
+  - id: few_shot_prompting
+    name: "Few-shot examples and prompt templates"
+    domain: D4
+    prerequisites: [system_prompt_design]
+    leads_to: []
+
+  - id: prompt_caching_design
+    name: "Prompt caching: cache breakpoints and ephemeral vs persistent"
+    domain: D4
+    prerequisites: [system_prompt_design]
+    leads_to: []
+
+  - id: output_consistency
+    name: "Increasing output consistency and reducing hallucination"
+    domain: D4
+    prerequisites: [structured_output_techniques]
+    leads_to: []
+
+  # ── D5: Context Management & Reliability ─────────────────────────────────
+  - id: context_window_management
+    name: "Context window limits and management strategies"
+    domain: D5
+    prerequisites: []
+    leads_to: [prompt_caching_design, token_counting]
+
+  - id: token_counting
+    name: "Token counting and cost estimation"
+    domain: D5
+    prerequisites: [context_window_management]
+    leads_to: []
+
+  - id: prompt_caching_mechanics
+    name: "Prompt caching mechanics: TTL, cache hits, savings"
+    domain: D5
+    prerequisites: [context_window_management]
+    leads_to: []
+
+  - id: batches_api
+    name: "Batches API for async high-volume workloads"
+    domain: D5
+    prerequisites: [token_counting]
+    leads_to: []
+
+  - id: reliability_patterns
+    name: "Reliability patterns: retries, fallbacks, rate limit handling"
+    domain: D5
+    prerequisites: []
+    leads_to: []
